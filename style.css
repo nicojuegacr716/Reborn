@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background: url(/images/fondo/fondo.png) repeat center center fixed;
+    background: url('images/fondo/fondo.png') repeat center center fixed;
     /* Utilizamos la imagen de fondo y la centramos */
     background-size: auto 100%;
     /* Ajustamos el tamaño de la imagen para que se escale automáticamente según la altura del cuerpo */
