@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reborn</title>
+    <script>
+        function mostrarSeccion(seccionId) {
+            // Ocultar todas las secciones
+            var secciones = document.querySelectorAll('.seccion');
+            secciones.forEach(function(seccion) {
+                seccion.style.display = 'none';
+            });
+
+            // Mostrar la sección seleccionada
+            var seccion = document.getElementById(seccionId);
+            if (seccion) {
+                seccion.style.display = 'block';
+            }
+
+            // Cambiar la parte de la URL después del hash (#)
+            window.location.hash = seccionId;
+        }
+
+        // Función para mostrar automáticamente la sección correspondiente al cargar la página
+        window.onload = function() {
+            // Obtener la parte de la URL después del hash (#)
+            var hash = window.location.hash.substring(1);
+            // Mostrar la sección correspondiente si existe
+            if (hash) {
+                mostrarSeccion(hash);
+            } else {
+                mostrarSeccion('inicio'); // Si no hay ninguna sección especificada, mostrar la de inicio por defecto
+            }
+        };
+
+     // Función para descargar archivo o bloquear la acción
+        function descargarArchivo(filePath) {
+            // Crear un enlace para descargar el archivo
+            const link = document.createElement('a');
+            link.href = filePath;
+            link.download = filePath.split('/').pop(); // Usar el nombre del archivo de la ruta
+
+            // Agregar el enlace al cuerpo del documento (necesario en algunos navegadores)
+            document.body.appendChild(link);
+
+            // Simular un clic en el enlace
+            link.click();
+
+            // Eliminar el enlace del cuerpo del documento
+            document.body.removeChild(link);
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="contenedor">
+        <button class="btn6" onclick="mostrarSeccion('inicio')">Inicio</button>
+        <button class="btn6" onclick="mostrarSeccion('descargas')">descargas</button>
+    </div>
+    <div id="inicio" class="seccion visible" style="display: block";> 
+    <h1 style="font-size: 15px;">Reborn. Un ejecutor de roblox lvl 3 que usa nyx api</h1>
+</div>
+<div id="descargas" class="seccion" style="display: none";>
+    <h2>Centro de descargas</h2>
+    <hr>
+    <button class="btn7" onclick="descargarArchivo1('')">Descargar Reborn (no disponible)</button>
+</div>
+
+</body>
+</html>
