@@ -35,7 +35,7 @@
             }
         };
 
-     // Función para descargar archivo o bloquear la acción
+        // Función para descargar archivo o bloquear la acción
         function descargarArchivo(filePath) {
             // Crear un enlace para descargar el archivo
             const link = document.createElement('a');
@@ -50,24 +50,21 @@
 
             // Eliminar el enlace del cuerpo del documento
             document.body.removeChild(link);
-
         }
-
     </script>
 </head>
 <body>
     <div class="contenedor">
         <button class="btn6" onclick="mostrarSeccion('inicio')">Inicio</button>
-        <button class="btn6" onclick="mostrarSeccion('descargas')">descargas</button>
+        <button class="btn6" onclick="mostrarSeccion('descargas')">Descargas</button>
     </div>
-    <div id="inicio" class="seccion visible" style="display: block";> 
-    <h1 style="font-size: 15px;">Reborn. Un ejecutor de roblox lvl 3 que usa nyx api</h1>
-</div>
-<div id="descargas" class="seccion" style="display: none";>
-    <h2>Centro de descargas</h2>
-    <hr>
-    <button class="btn7" onclick="descargarArchivo1('')">Descargar Reborn (no disponible)</button>
-</div>
-
+    <div id="inicio" class="seccion visible" style="display: block;"> 
+        <h1 style="font-size: 15px;">Reborn. Un ejecutor de roblox lvl 3 que usa nyx api</h1>
+    </div>
+    <div id="descargas" class="seccion" style="display: none;">
+        <h2>Centro de descargas</h2>
+        <hr>
+        <button class="btn7" onclick="descargarArchivo('ruta/al/archivo')">Descargar Reborn (no disponible)</button>
+    </div>
 </body>
 </html>
